@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jhojan | Portafolio de Staff & Developer</title>
+    <style>
+        /* --- ESTILOS GENERALES (MODO OSCURO) --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #0d1117;
+            color: #c9d1d9;
+            line-height: 1.6;
+        }
+        a {
+            color: #58a6ff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* --- MENÚ DE NAVEGACIÓN --- */
+        header {
+            background-color: #161b22;
+            border-bottom: 1px solid #30363d;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .logo {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #2ea44f;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+        nav a {
+            color: #8b949e;
+            font-weight: 500;
+        }
+        nav a:hover {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .btn-contact {
+            background-color: #2ea44f;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        .btn-contact:hover {
+            background-color: #2c974b;
+            text-decoration: none;
+        }
+
+        /* --- SECCIÓN PRINCIPAL (HERO) --- */
+        .hero {
+            padding: 60px 0;
+            text-align: center;
+            border-bottom: 1px solid #21262d;
+        }
+        .status {
+            display: inline-block;
+            background-color: rgba(46, 164, 79, 0.15);
+            color: #3fb950;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            color: #f0f6fc;
+            margin-bottom: 15px;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            color: #8b949e;
+            max-width: 600px;
+            margin: 0 auto 25px auto;
+        }
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        .btn-primary {
+            background-color: #21262d;
+            color: #c9d1d9;
+            padding: 10px 20px;
+            border-radius: 6px;
+            border: 1px solid #30363d;
+            font-weight: 600;
+        }
+        .btn-primary:hover {
+            background-color: #30363d;
+            text-decoration: none;
+        }
+
+        /* --- SECCIONES REUTILIZABLES --- */
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid #21262d;
+        }
+        section h2 {
+            font-size: 1.8rem;
+            color: #f0f6fc;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .section-desc {
+            text-align: center;
+            color: #8b949e;
+            margin-bottom: 40px;
+        }
+
+        /* --- TARJETAS DE EXPERIENCIA --- */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            padding: 25px;
+            border-radius: 8px;
+            position: relative;
+        }
+        .badge {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 0.75rem;
+            background-color: #21262d;
+            color: #8b949e;
+            padding: 2px 8px;
+            border-radius: 4px;
+            border: 1px solid #30363d;
+        }
+        .card h3 {
+            color: #f0f6fc;
+            margin-bottom: 5px;
+            font-size: 1.3rem;
+        }
+        .card .role {
+            color: #58a6ff;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        .card p {
+            color: #8b949e;
+            font-size: 0.95rem;
+        }
+
+        /* --- SECCIÓN HABILIDADES --- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+            gap: 25px;
+        }
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+        .tag {
+            background-color: #21262d;
+            color: #c9d1d9;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            border: 1px solid #30363d;
+        }
+
+        /* --- SECCIÓN CONTACTO / DISCORD --- */
+        .contact-box {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .discord-wrapper {
+            background-color: #0d1117;
+            border: 1px solid #30363d;
+            padding: 12px;
+            border-radius: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .discord-user {
+            font-family: monospace;
+            color: #f0f6fc;
+            font-size: 1.1rem;
+        }
+        .btn-copy {
+            background-color: #21262d;
+            color: #c9d1d9;
+            border: 1px solid #30363d;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85rem;
+        }
+        .btn-copy:hover {
+            background-color: #30363d;
+        }
+
+        /* --- PIE DE PÁGINA --- */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #8b949e;
+            font-size: 0.9rem;
+        }
+        footer p:last-child {
+            margin-top: 5px;
+            color: #484f58;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- MENÚ DE NAVEGACIÓN -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">JHOJAN.DEV</div>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#experiencia">Experiencia</a></li>
+                    <li><a href="#habilidades">Habilidades</a></li>
+                </ul>
+            </nav>
+            <a href="#contacto" class="btn-contact">Contáctame</a>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- SECCIÓN PRINCIPAL (HERO) -->
+        <section class="hero" id="inicio">
+            <span class="status">Disponible para Proyectos y Staff</span>
+            <h1>Hola, soy Jhojan</h1>
+            <p>Desarrollador de Plugins & Staff con amplia trayectoria en servidores de Minecraft de alto nivel. Experiencia técnica y moderación profesional garantizada.</p>
+            <div class="hero-buttons">
+                <a href="#experiencia" class="btn-primary">Ver Trayectoria</a>
+                <a href="#contacto" class="btn-primary" style="color: #58a6ff;">Discord: jhojan2011_55708</a>
+            </div>
+        </section>
+
+        <!-- SECCIÓN EXPERIENCIA -->
+        <section id="experiencia">
+            <h2>Experiencia & Roles</h2>
+            <p class="section-desc">Mi paso por servidores destacados dentro de la comunidad de Minecraft.</p>
+            
+            <div class="grid">
+                <!-- Tarjeta 1 -->
+                <div class="card">
+                    <span class="badge">Rol Técnico Activo / Pasado</span>
+                    <div class="role">Developer</div>
+                    <h3>Jadesmc</h3>
+                    <p>Encargado del desarrollo de sistemas personalizados, optimización y creación de plugins a medida para mejorar la experiencia de juego de la comunidad.</p>
+                </div>
+
+                <!-- Tarjeta 2 -->
+                <div class="card">
+                    <span class="badge">Moderación Staff Team</span>
+                    <div class="role">Moderador</div>
+                    <h3>Mineday</h3>
+                    <p>Gestión de la comunidad, control de seguridad, revisión de reportes, resolución de conflictos y soporte directo a usuarios dentro del servidor.</p>
+                </div>
+
+                <!-- Tarjeta 3 -->
+                <div class="card">
+                    <span class="badge">Administración Leadership</span>
+                    <div class="role">Jr. Admin</div>
+                    <h3>Metabox</h3>
+                    <p>Administración junior, supervisión de personal, configuración general del servidor y apoyo en decisiones administrativas y eventos de gran escala.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN HABILIDADES -->
+        <section id="habilidades">
+            <h2>Habilidades & Competencias</h2>
+            <p class="section-desc">Cononocimientos técnicos aplicados al ecosistema de servidores de Minecraft.</p>
+            
+            <div class="grid">
+                <!-- Habilidad 1 -->
+                <div class="card">
+                    <h3>Programación de Plugins</h3>
